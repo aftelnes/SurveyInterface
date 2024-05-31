@@ -15,11 +15,7 @@ const formatTime = (timer: number) => {
   return minutes + ":" + seconds;
 };
 
-type Props = {
-  seconds: number;
-};
-
-const Timer: FC<Props> = ({ seconds }) => {
+const Timer: FC = () => {
   const [countDown, setCountDown] = useState<number>(10);
   const timerId = useRef<NodeJS.Timeout | null>(null);
 

@@ -7,12 +7,12 @@ import setTimer from "./tools/setTimer";
 
 function App() {
   fillLocalStorage();
-  setTimer(900);
+  setTimer(20);
   return (
     <div className={styles.app}>
       <div className={styles.header}>
         <h2>Тестирование на Программиста</h2>
-        <Timer seconds={3600} />
+        <Timer />
       </div>
       <Test />
     </div>
