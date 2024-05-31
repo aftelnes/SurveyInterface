@@ -4,11 +4,12 @@ import { Stepper, Button, Group, Notification } from "@mantine/core";
 import styles from "./Test.module.css";
 
 import SingleRadioQuestion from "./questions/radio/SingleRadioQuestion";
-import MultiRadioQuestion from "./questions/radio/MultiRadioQuestion";
+import MultiCheckboxQuestion from "./questions/radio/MultiCheckboxQuestion";
 import SingleSelect from "./questions/singleselect/SingleSelect";
 import TextAreaQuestion from "./questions/textarea/TextAreaQuestion";
 
 import questionsData from "../questionsData/questionsData";
+import emptyLocalStorage from "../tools/emptyLocalStorage";
 
 const Test: FC = () => {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -28,7 +29,7 @@ const Test: FC = () => {
         >
           <Stepper.Step>
             <div className={styles.step}>
-              <MultiRadioQuestion
+              <MultiCheckboxQuestion
                 questionHeader="Какие из предложенных языков являются интерпретируемыми?"
                 questionStorageName="first"
               />
@@ -89,14 +90,18 @@ const Test: FC = () => {
               Назад
             </Button>
           )}
-
-          <Button onClick={nextStep}>Далее</Button>
+          {activeStep !== 6 && <Button onClick={nextStep}>Далее</Button>}
           {activeStep === 6 && (
             <Button
               color="green"
               onClick={(event) => setShowNotification(!showNotification)}
             >
               Отправить
+            </Button>
+          )}
+          {activeStep === 6 && (
+            <Button color="yellow" onClick={() => emptyLocalStorage()}>
+              Заново
             </Button>
           )}
         </Group>

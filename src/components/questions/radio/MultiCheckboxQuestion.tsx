@@ -1,5 +1,5 @@
 import { useState, FC, useEffect } from "react";
-import { Radio } from "@mantine/core";
+import { Checkbox } from "@mantine/core";
 
 import styles from "./RadioQuestions.module.css";
 import { IRadioQuestion } from "../../../questionsData/questionDataInterface";
@@ -9,7 +9,7 @@ interface Props {
   questionHeader: string;
 }
 
-const MultiRadioQuestion: FC<Props> = ({
+const MultiCheckboxQuestion: FC<Props> = ({
   questionStorageName,
   questionHeader,
 }) => {
@@ -40,7 +40,7 @@ const MultiRadioQuestion: FC<Props> = ({
     <>
       <h4>{questionHeader}</h4>
       {data.map((item, index) => (
-        <Radio
+        <Checkbox
           className={styles.radio}
           checked={item.selected}
           label={item.label}
@@ -51,4 +51,4 @@ const MultiRadioQuestion: FC<Props> = ({
   );
 };
 
-export default MultiRadioQuestion;
+export default MultiCheckboxQuestion;

@@ -1,6 +1,6 @@
 import questionsData from "../questionsData/questionsData";
 
-//В случае использования radio опросников, нужно обновлять это функцию таким же образом, как уже писано
+//В случае использования radio опросников, нужно обновлять это функцию таким же образом, как уже написано
 const fillLocalStorage = () => {
   if (localStorage.getItem("first") == null) {
     localStorage.setItem("first", JSON.stringify(questionsData.firstQuestion));
