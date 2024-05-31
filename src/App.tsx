@@ -7,7 +7,7 @@ import setTimer from "./tools/setTimer";
 
 function App() {
   fillLocalStorage();
-  setTimer(20);
+  setTimer(100);
   return (
     <div className={styles.app}>
       <div className={styles.header}>

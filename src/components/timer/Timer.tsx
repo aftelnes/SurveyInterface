@@ -22,7 +22,7 @@ const Timer: FC = () => {
   useEffect(() => {
     let time = Number(localStorage.getItem("timerSeconds"));
     setCountDown(time);
-  }, []);
+  });
 
   useEffect(() => {
     timerId.current = setInterval(() => {
@@ -42,7 +42,7 @@ const Timer: FC = () => {
   useEffect(() => {
     if (countDown <= 0 && timerId.current) {
       clearInterval(timerId.current);
-      alert("Время кончилось!");
+      alert("Тест окончен! Результаты будут отправлены на почту)");
     }
   }, [countDown]);
 

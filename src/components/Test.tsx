@@ -94,7 +94,10 @@ const Test: FC = () => {
           {activeStep === 6 && (
             <Button
               color="green"
-              onClick={(event) => setShowNotification(!showNotification)}
+              onClick={(event) => {
+                setShowNotification(!showNotification);
+                localStorage.clear();
+              }}
             >
               Отправить
             </Button>
