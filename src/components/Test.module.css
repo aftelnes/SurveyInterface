@@ -1,0 +1,11 @@
+.test {
+  /* background-color: aqua; */
+  width: 1000px;
+  height: 300px;
+}
+
+.step {
+  width: 700px;
+  height: 200px;
+  margin-top: 15px;
+}
