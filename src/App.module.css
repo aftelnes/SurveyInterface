@@ -5,6 +5,12 @@
   border-radius: 5px;
   box-shadow: 10px 10px 10px rgb(211, 211, 211);
   display: block;
-  justify-content: center; /* Центрирование по горизонтали */
-  align-items: center; /* Центрирование по вертикали */
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
